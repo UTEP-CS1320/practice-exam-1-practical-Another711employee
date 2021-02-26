@@ -24,15 +24,19 @@ int main(void) {
     // TODO: Fix the code below.
     int x, y;
     scanf("%d %d", &x, &y);
-
-    int x_digit = x / 10;
-    int y_digit = y / 10;
-
+   //for this modulo operator we are obtaining the last two digits and this modulo division will obtain values from 0 to 99.
+    int x_digit = x % 100;
+    int y_digit = y % 100;
+   // if both results are the same it will print true
     if(x_digit == y_digit) {
-      print("TRUE");
+      printf("TRUE");
     }
-
-    print("FALSE");
+    //else means it is false
+    else {
+      printf("FALSE");
+    }
+    
+    
     
     /* Problem 1 End */
   } else if(opt == 2) {
@@ -42,6 +46,36 @@ int main(void) {
      ***************************/
     char winner[5] = "7239";
     char ticket[5];
+    int number;
+
+     scanf("%s", ticket);
+   // for every digit that matches the winner ticket, number will have 1 added to itself.
+    if(winner[1]== ticket[1]) {
+      number+= 1;
+    }
+    if (winner [2]== ticket [2]){
+       number+= 1;
+    }
+    if (winner [3]== ticket[3]){
+       number+= 1;
+    }
+    if (winner [4]== ticket[4]){
+       number+= 1;
+    }
+// Depending on the amount of points accumulated, you will have either first prize, second prize, third prize or none!
+    if( number ==2){
+      printf("3rd Prize!\n");
+    }
+    else if( number ==3){
+    printf("2rd Prize!\n");
+  }
+   else if( number ==4){
+    printf("1rd Prize!\n");
+  }
+  else{
+    printf("Better luck next time!\n");
+  }
+ 
 
     scanf("%s", ticket);
     
